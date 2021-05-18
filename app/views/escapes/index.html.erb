@@ -1,48 +1,46 @@
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
 </head>
 <div class="container">
-    <h1>Tutte le Escapes</h1>
-    <table class="table  table-hover">
-        <thead>
-            <tr class="table-primary">
-                <th>Luogo</th>
-                <th>Stanza</th>
-                <th>Valutazione</th>
-                <th>Difficoltà</th>
-                <th>Descrizione</th>
-                <th>Info</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% @all.each do |escape| %>
-                <tr>
-                    <th class="text-muted">
-                        <%= escape.Luogo %>
-                    </th>
-                    <td>
-                        <%= escape.Stanza %>
-                    </td>
-                    <td>
-                        <%= escape.Valutazione %>
-                    </td>
-                    <td>
-                        <%= escape.Difficoltà %>
-                    </td>
-                    <td>
-                        <%= escape.Descrizione %>
-                    </td>
-                    <td><table style="width:100%">
-                        <td><%= link_to "Modifica", edit_escape_path(escape.id) %></td>
-                        <td><%= link_to "Elimina", escape_path(escape.id), method: :delete,
-                                  data: { confirm: "Sei sicuro?" } %></td>
-                        <td><%= link_to "Tutte le recensioni", escape_path(escape.id) %></td>
-                          </table>
-                    </td>
-                </tr>
-                <% end %>
-        </tbody>
-    </table>
+  <h1>Tutte le Escapes</h1>
+  <table class="table table-hover">
+    <thead>
+      <tr class="table-primary">
+        <th>Luogo</th>
+        <th>Stanza</th>
+        <th>Valutazione</th>
+        <th>Difficoltà</th>
+        <th>Descrizione</th>
+        <th>Info</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @all.each do |escape| %>
+      <tr>
+        <th class="text-muted"><%= escape.Luogo %></th>
+        <td><%= escape.Stanza %></td>
+        <td><%= escape.Valutazione %></td>
+        <td><%= escape.Difficoltà %></td>
+        <td><%= escape.Descrizione %></td>
+        <td>
+          <table style="width: 100%">
+            <td><%= link_to "Modifica", edit_escape_path(escape.id) %></td>
+            <td>
+              <%= link_to "Elimina", escape_path(escape.id), method: :delete,
+              data: { confirm: "Sei sicuro?" } %>
+            </td>
+            <td><%= link_to "Dettagli", escape_path(escape.id) %></td>
+          </table>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to "Aggiungi una nuova escape", new_escape_path%>
 </div>
+
