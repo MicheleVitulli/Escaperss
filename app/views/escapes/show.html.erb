@@ -1,11 +1,51 @@
-
-
 <h1>Dettagli su <%= @escape.Stanza%></h1>
 
 <ul id="dettagli">
     <li>Dove trovarla: <%= @escape.Luogo%></li>
     <li>Nome della stanza: <%= @escape.Stanza %></li>
-
 </ul>
-<%= link_to "Torna a tutte le stanze", escapes_path %>
+<h2>Recensioni</h2>
+<% if @escape.reviews.empty? %>
+<h3>Non è ancora presente nessuna recensione</h3>
+<% end %>
 
+<% @escape.reviews.each do |rec| %>
+<table>
+    <tr>
+        <th>Valutazione</th>
+        <th>Difficoltà</th>
+        <th>Descrizione</th>
+    </tr>
+    <tr>
+        <th><%= rec.valutazione %></th>
+        <th><%= rec.difficoltà %></th>
+        <th><%= rec.testo_recensione %></th>
+    </tr>
+</table>
+<h3>Autore: <%=link_to rec.user.email%></h3>
+<% end %>
+
+<h2>Scrivi una recensione</h2>
+<%= form_with model: [ @escape, @escape.reviews.build ] do |form| %>
+  <p>
+    <%= form.label :valutazione %><br>
+    <%= form.collection_select :valutazione, [1,2,3,4,5], :to_i, :to_s %>
+  </p>
+  <p>
+    <%= form.label :difficoltà %><br>
+    <%= form.collection_select :difficoltà, [1,2,3,4,5], :to_i, :to_s%>
+  </p>
+  <p>
+    <%= form.label :testo_recensione %><br>
+    <%= form.text_area :testo_recensione %>
+  </p>
+
+
+
+  <p>
+  	
+    <%= form.submit "Pubblica recensione" %>
+  </p>
+<% end %>
+
+<%= link_to "Torna a tutte le stanze", escapes_path %>

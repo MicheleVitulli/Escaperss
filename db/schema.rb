@@ -10,13 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_19_132405) do
-
-  create_table "escapers", force: :cascade do |t|
-    t.string "user"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2021_05_19_171352) do
 
   create_table "escapes", force: :cascade do |t|
     t.string "Luogo"
@@ -28,15 +22,8 @@ ActiveRecord::Schema.define(version: 2021_05_19_132405) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.integer "valutazione"
-    t.integer "difficoltà"
-    t.text "testo_recensione"
-    t.integer "escape_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["escape_id"], name: "index_reviews_on_escape_id"
-  end
+# Could not dump table "reviews" because of following StandardError
+#   Unknown type 'reference' for column 'user_id'
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

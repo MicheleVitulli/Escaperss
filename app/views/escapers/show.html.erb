@@ -1,43 +1,24 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<h2> Reviews </h2>
 
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<% if @esc.reviews.empty? %>
+ <h3> No reviews yet! </h3>
+<% end %>
 
-</head>
+<%@esc.reviews.each do |review| %>
+	<p>
+		<bf>Valutazione: </bf><%= review.valutazione %> <br>
+		<bf>Difficoltà: </bf><%= review.difficoltà %> <br>
+    <bf>Testo: </bf><%= review.testo_recensione %> <br>
+	 <bf>Stanza: </bf><%= review.escape.Stanza %> <br>
+  </p>
 
-<body>
-  <div class="container pt-5 justify-content-center d-flex">
-    <h1 class="text-primary">Login su Escaperss</h1>
-  </div>
-  <div class="container border rounded-lg shadow mt-5" style="width: 33%;">
-    <%= form_with class: 'p-3', model: @escape do |form| %>
-      <div class="form-group">
-        <!-- form control -->
-        <%= form.label :user, 'User Name' %>
-        <%= form.text_field :user, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <!-- form control -->
-        <%= form.label :password, 'Password' %>
-        <%= form.text_field :password, class: 'form-control' %>
-      </div>
-      <button type="submit" class="btn btn-primary">Accedi</button>
-    <% end %>
-  </div>
-  <span class="container d-flex justify-content-center">
-  <button type="button" class="btn btn-warning mt-3" data-toggle="collapse" data-target="#demo">Chi siamo</button>
-  </span>
-  <div id="demo" class="collapse container mt-3">
-    <p class="text-center">Escaperss è il sito delle recensioni delle Escape Rooms di Roma</p>
-  </div>
-  </div>
-</body>
+	<p>
+  	<ul>
+  	<li> <%= link_to "Edit Review", edit_escape_review_path(review.escape, review)  %></li>
+  	<li><%= link_to 'Delete Review', [review.escape, review],
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+	</li>
+	</ul>
 
-</html>
+<% end %>

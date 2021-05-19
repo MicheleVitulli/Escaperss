@@ -29,10 +29,13 @@ class ReviewsController < ApplicationController
     redirect_to escape_path(@escape)
   end
 
-  private
     def review_params
-      p = params.require(:review).permit(:valutazione, :difficoltà, :testo, :escaper)
-      {:valutazione=> p[:valutazione], :difficoltà =>p[:difficoltà], :testo =>p[:testo] :escaper=>Escaper.find(p[:escaper])}
+      p = params.require(:review).permit(:valutazione, :difficoltà, :testo_recensione, :user)
+      {:valutazione=> p[:valutazione], :difficoltà =>p[:difficoltà], :testo_recensione =>p[:testo_recensione], :user=>current_user}
+    end
+
+    def user_reviews
+      @user = User.find(params[:id])
     end
 
 

@@ -1,18 +1,19 @@
 class EscapersController < ApplicationController
+  
   def show
-    @escAll = Escapers.find(params[:id])
+    @esc = Escaper.find(params[:id])
   end
 
   def index
-    @esc = Escapers.all
+    @escs = Escaper.all
   end
 
   def new
-    @esc = Escapers.new
+    @esc = Escaper.new
   end
 
   def create
-    @esc = Escapers.new(esc_params)
+    @esc = Escaper.new(esc_params)
     if @esc.save
       redirect_to @esc
     else
@@ -21,18 +22,18 @@ class EscapersController < ApplicationController
   end
 
   def edit
-    @esc = Escapers.find(params[:id])
+    @esc = Escaper.find(params[:id])
   end
 
   def destroy
-    @esc = Escapers.find(params[:id])
+    @esc = Escaper.find(params[:id])
     @esc.destroy
 
     redirect_to root_path
   end
 
   def update
-    @esc = Escapers.find(params[:id])
+    @esc = Escaper.find(params[:id])
     if @esc.update(esc_params)
       redirect_to @esc
     else
@@ -42,6 +43,6 @@ class EscapersController < ApplicationController
 
   private
     def esc_params
-      params.require(:escapers).permit(:name)
+      params.require(:escaper).permit(:user)
   end
 end

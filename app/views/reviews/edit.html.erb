@@ -1,0 +1,21 @@
+<h2> Scrivi una recensione</h2>
+
+<%= form_with model: [ @review.escape, @review ] do |form| %>
+  <p>
+    <%= form.label :valutazione %><br>
+    <%= form.collection_select :valutazione, [1,2,3,4,5], :to_i, :to_s%>
+  </p>
+  <p>
+    <%= form.label :difficoltà %><br>
+    <%= form.collection_select :difficoltà, [1,2,3,4,5], :to_i, :to_s%>
+  </p>
+  <p>
+    <%= form.label :testo_recensione %><br>
+    <%= form.text_area :testo_recensione , [1,2,3,4,5], :to_i, :to_s%>
+  </p>
+
+  <p>
+  	
+    <%= form.submit "Pubblica recensione" %>
+  </p>
+<% end %>

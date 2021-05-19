@@ -2,50 +2,51 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta charset="utf-8">
-  <title></title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </head>
+
 <body>
-  <div class="container pt-5 justify-content-center d-flex">
-    <h1 class="text-primary">Login su Escaperss</h1>
-  </div>
-  <div class="container border rounded-lg shadow mt-5" style="width: 33%;">
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'p-3') do |f| %>
-  <div class="form-group">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="form-check">
-      <%= f.check_box :remember_me, class: 'form-check-input' %>
-      <%= f.label :remember_me, class: 'form-check-label', value: 'ricordami'%>
+    <div class="container pt-5 justify-content-center d-flex">
+        <h1 class="text-primary">Login su Escaperss</h1>
     </div>
-  <% end %>
+    <div class="container border rounded-lg shadow mt-5" style="width: 33%;">
 
-  <div class="form-group mt-3">
-    <%= f.submit "Entra", class: 'btn btn-primary' %>
-  </div>
-<% end %>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'p-3') do |f| %>
+        <div class="form-group">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+        <div class="form-check">
+            <%= f.check_box :remember_me, class: 'form-check-input' %>
+            <%= f.label :remember_me, class: 'form-check-label', value: 'ricordami'%>
+        </div>
+        <% end %>
+
+        <div class="form-group mt-3">
+            <%= f.submit "Entra", class: 'btn btn-primary' %>
+        </div>
+        <% end %>
 
 
-<%= render "users/shared/links" %>
-</div>
-<span class="container d-flex justify-content-center">
-<button type="button" class="btn btn-warning mt-3" data-toggle="collapse" data-target="#demo">Chi siamo</button>
-</span>
-<div id="demo" class="collapse container mt-3">
-  <p class="text-center">Escaperss è il sito delle recensioni delle Escape Rooms di Roma</p>
-</div>
+        <%= render "users/shared/links" %>
+    </div>
+    <span class="container d-flex justify-content-center">
+        <button type="button" class="btn btn-warning mt-3" data-toggle="collapse" data-target="#demo">Chi siamo</button>
+    </span>
+    <div id="demo" class="collapse container mt-3">
+        <p class="text-center">Escaperss è il sito delle recensioni delle Escape Rooms di Roma</p>
+    </div>

@@ -1,0 +1,21 @@
+<h1> <%= @user.email %> </h1>
+<hr>
+<h2> Recensioni </h2>
+<% if @user.reviews.empty? %>
+    <h3> Non si sono ancora recensioni </h3>
+<% end %>
+
+<% @user.reviews.each do |rec| %>
+<table>
+    <tr>
+        <th>Valutazione</th>
+        <th>Difficoltà</th>
+        <th>Descrizione</th>
+    </tr>
+    <tr>
+        <th><%= rec.valutazione %></th>
+        <th><%= rec.difficoltà %></th>
+        <th><%= rec.testo_recensione %></th>
+    </tr>
+</table>
+<% end %>

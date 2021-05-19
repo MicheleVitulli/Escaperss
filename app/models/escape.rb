@@ -4,7 +4,7 @@ class Escape < ApplicationRecord
   def mediaVoti
     total1 = 0
     self.reviews.each do |rev|
-      total1 += rev.voto
+      total1 += rev.valutazione
     end
     return (total1.to_f/self.reviews.count.to_f).round(2)
   end

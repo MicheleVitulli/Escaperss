@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :escapers
 
+  get '/users/reviews/:id', to: 'reviews#user_reviews', :as => :user_reviews
+
   root "escapes#index"
   resources :escapes do
     resources :reviews
