@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  
-  resources :escapes
+
+  resources :escapers
+
+  root "escapes#index"
+  resources :escapes do
+    resources :reviews
+  end
+
 
 
 
