@@ -1,0 +1,2 @@
+class Escaper < ApplicationRecord
+end
