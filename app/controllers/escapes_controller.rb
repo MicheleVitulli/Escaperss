@@ -59,7 +59,7 @@ class EscapesController < ApplicationController
 
 #definizione dei parametri
       def escape_params
-          params.require(:escape).permit(:Luogo, :Stanza)
+          params.require(:escape).permit(:Luogo, :Stanza, :Descrizione)
       end
 
 end

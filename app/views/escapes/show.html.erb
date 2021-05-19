@@ -1,51 +1,99 @@
-<h1>Dettagli su <%= @escape.Stanza%></h1>
 
-<ul id="dettagli">
-    <li>Dove trovarla: <%= @escape.Luogo%></li>
-    <li>Nome della stanza: <%= @escape.Stanza %></li>
-</ul>
-<h2>Recensioni</h2>
-<% if @escape.reviews.empty? %>
-<h3>Non è ancora presente nessuna recensione</h3>
-<% end %>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<% @escape.reviews.each do |rec| %>
-<table>
-    <tr>
-        <th>Valutazione</th>
-        <th>Difficoltà</th>
-        <th>Descrizione</th>
-    </tr>
-    <tr>
-        <th><%= rec.valutazione %></th>
-        <th><%= rec.difficoltà %></th>
-        <th><%= rec.testo_recensione %></th>
-    </tr>
-</table>
-<h3>Autore: <%=link_to rec.user.email%></h3>
-<% end %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 
-<h2>Scrivi una recensione</h2>
-<%= form_with model: [ @escape, @escape.reviews.build ] do |form| %>
-  <p>
-    <%= form.label :valutazione %><br>
-    <%= form.collection_select :valutazione, [1,2,3,4,5], :to_i, :to_s %>
-  </p>
-  <p>
-    <%= form.label :difficoltà %><br>
-    <%= form.collection_select :difficoltà, [1,2,3,4,5], :to_i, :to_s%>
-  </p>
-  <p>
-    <%= form.label :testo_recensione %><br>
-    <%= form.text_area :testo_recensione %>
-  </p>
+  <!-- Bootstrap core CSS -->
+</head>
+
+<body>
+
+  <main role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">
+          <%= @escape.Stanza%>
+        </h1>
+        <p>TESTO DI PROVA DA RIEMPIRE</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">
+            <%= @escape.Luogo%>
+          </a></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <h1>Recensioni</h1>
+      <div class="row">
+        <% @escape.reviews.each  do |rec| %>
+          <div class="col-md-4">
+            <h4>Escaper: <%=link_to rec.user.email, user_reviews_path(rec.user)%>
+            </h4>
+            <p>
+              <%= rec.testo_recensione %>
+            </p>
+            <p>Voto: <span class="badge badge-primary">
+                <%= rec.valutazione %>
+              </span></p>
+            <p>Difficoltà: <span class="badge badge-primary">
+                <%= rec.difficoltà %>
+              </span></p>
+            <p><%= link_to "Modifica recensione" , edit_escape_review_path(rec.escape, rec) %>
+              <%= link_to 'Elimina recensione' , [rec.escape, rec], method: :delete, data: { confirm: "Sei sicuro?" } %></p>
+          </div>
+        <% end %>
+      </div>
+
+      <hr>
+
+    </div> <!-- /container -->
+
+  </main>
+
+  <footer class="container mb-4">
+    <h3>Scrivi una recensione</h3>
+    <%= form_with model: [ @escape, @escape.reviews.build ] do |form| %>
+    <div class="form-group">
+      <%= form.label :testo_recensione %><br>
+        <%= form.text_area :testo_recensione, class: 'form-control', rows: '1' %>
+    </div>
+      <div class="form-row">
+        <div class="col">
+          <%= form.label :valutazione %><br>
+          <%= form.collection_select :valutazione, [1,2,3,4,5], :to_i, :to_s, class: 'form-control' %>
+        </div>
+        <div class="col">
+          <%= form.label :difficoltà %><br>
+          <%= form.collection_select :difficoltà, [1,2,3,4,5], :to_i, :to_s%>
+        </div>
+      </div>
+      <div class="form-row">
+        <p></p>
+      </div>
+      
+
+      <div class="form-group">
+        <%= form.submit "Pubblica recensione", class: "btn btn-primary" %>
+      </div>
+      <% end %>
+
+        <%= link_to "Torna a tutte le stanze" , escapes_path %>
+  </footer>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="../../assets/js/vendor/popper.min.js"></script>
+  <script src="../../dist/js/bootstrap.min.js"></script>
 
 
-
-  <p>
-  	
-    <%= form.submit "Pubblica recensione" %>
-  </p>
-<% end %>
-
-<%= link_to "Torna a tutte le stanze", escapes_path %>
+</body>

@@ -19,7 +19,7 @@
     <div class="container border rounded-lg shadow mt-5" style="width: 33%;">
 
         <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'p-3') do |f| %>
-        <div class="form-group">
+        <div class="form-group mt-3">
             <%= f.label :email %><br />
             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
         </div>
@@ -36,13 +36,14 @@
         </div>
         <% end %>
 
+
         <div class="form-group mt-3">
             <%= f.submit "Entra", class: 'btn btn-primary' %>
         </div>
         <% end %>
-
-
+        <div class="form-row">
         <%= render "users/shared/links" %>
+        </div>
     </div>
     <span class="container d-flex justify-content-center">
         <button type="button" class="btn btn-warning mt-3" data-toggle="collapse" data-target="#demo">Chi siamo</button>

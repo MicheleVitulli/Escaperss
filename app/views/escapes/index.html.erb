@@ -8,9 +8,9 @@
             <tr class="table-primary">
                 <th>Luogo</th>
                 <th>Stanza</th>
-                <th>Valutazione</th>
-                <th>Difficoltà</th>
-                <th>Descrizione</th>
+                <th>Valutazione Media</th>
+                <th>Difficoltà Media</th>
+                <th>Link alla Stanza</th>
                 <th>Info</th>
             </tr>
         </thead>
@@ -21,7 +21,7 @@
                 <td><%= escape.Stanza %></td>
                 <td><%= escape.mediaVoti %></td>
                 <td><%= escape.mediaDiff %></td>
-                <td><%= escape.Descrizione %></td>
+                <td><a href=<%= escape.Descrizione%> target="_blank"><%= escape.Stanza %> sul sito di <%= escape.Luogo %> </a></td>
                 <td>
                     <table style="width: 100%">
                         <td><%= link_to "Modifica", edit_escape_path(escape.id) %></td>
@@ -29,7 +29,7 @@
                             <%= link_to "Elimina", escape_path(escape.id), method: :delete,
               data: { confirm: "Sei sicuro?" } %>
                         </td>
-                        <td><%= link_to "Dettagli", escape_path(escape.id) %></td>
+                        <td><%= link_to "Dettagli e recensioni", escape_path(escape.id) %></td>
                     </table>
                 </td>
             </tr>
