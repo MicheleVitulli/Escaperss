@@ -5,8 +5,8 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    authorize! :update, Review, message: "Non sei autorizzato a questa azione"
     @review = Escape.find(params[:movie_id]).reviews.find(params[:id])
-
     if @review.update(review_params)
       redirect_to @review.escape
     else
@@ -23,6 +23,7 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+
     @escape = Escape.find(params[:escape_id])
     @review = @escape.reviews.find(params[:id])
     @review.destroy

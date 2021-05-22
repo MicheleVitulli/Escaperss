@@ -2,6 +2,7 @@ class EscapesController < ApplicationController
 
     skip_before_action :verify_authenticity_token
     before_action :authenticate_user!
+    #authorize! :action, Resource, message => "Non sei autorizzato"
 
     def index
         @all = Escape.all
@@ -21,6 +22,7 @@ class EscapesController < ApplicationController
     end
 
     def create
+        authorize! :create, Review, message: "Non sei autorizzato"
         @escape = Escape.new(escape_params)
         if @escape.save
             redirect_to escapes_path
@@ -31,6 +33,7 @@ class EscapesController < ApplicationController
     end
 
     def destroy
+        authorize! :destroy, Review, message: "Non sei autorizzato"
         @escape = Escape.find(params[:id])
         @escape.destroy
 

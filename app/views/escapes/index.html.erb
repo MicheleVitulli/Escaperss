@@ -24,11 +24,13 @@
                 <td><a href=<%= escape.Descrizione%> target="_blank"><%= escape.Stanza %> sul sito di <%= escape.Luogo %> </a></td>
                 <td>
                     <table style="width: 100%">
-                        <td><%= link_to "Modifica", edit_escape_path(escape.id) %></td>
+                        <% if current_user.is_admin? %>
+                        <td><%= link_to "Modifica", edit_escape_path(escape.id), class: " text-danger" %></td>
                         <td>
                             <%= link_to "Elimina", escape_path(escape.id), method: :delete,
-              data: { confirm: "Sei sicuro?" } %>
+              data: { confirm: "Sei sicuro?" }, class: " text-danger" %>
                         </td>
+                        <% end %>
                         <td><%= link_to "Dettagli e recensioni", escape_path(escape.id) %></td>
                     </table>
                 </td>
@@ -36,5 +38,8 @@
             <% end %>
         </tbody>
     </table>
+    <% if current_user.is_admin? %>
     <%= link_to "Aggiungi una nuova escape", new_escape_path%>
+    <%= link_to "Pagina degli utenti (solo amministratore)", admin_view_path, class: " text-danger"%>
+    <% end %>
 </div>

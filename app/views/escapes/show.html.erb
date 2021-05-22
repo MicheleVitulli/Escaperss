@@ -19,7 +19,6 @@
         <h1 class="display-3">
           <%= @escape.Stanza%>
         </h1>
-        <p>TESTO DI PROVA DA RIEMPIRE</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">
             <%= @escape.Luogo%>
           </a></p>
@@ -43,8 +42,14 @@
             <p>Difficoltà: <span class="badge badge-primary">
                 <%= rec.difficoltà %>
               </span></p>
-            <p><%= link_to "Modifica recensione" , edit_escape_review_path(rec.escape, rec) %>
+              <% if current_user.is_admin? %>
+            <p><%= link_to "Modifica recensione" , edit_escape_review_path(rec.escape, rec), class: "text-danger" %>
+              <%= link_to 'Elimina recensione' , [rec.escape, rec], method: :delete, data: { confirm: "Sei sicuro?" }, class: "text-danger" %></p>
+              <% end %>
+              <% if current_user.email == rec.user.email%>
+              <p><%= link_to "Modifica recensione" , edit_escape_review_path(rec.escape, rec) %>
               <%= link_to 'Elimina recensione' , [rec.escape, rec], method: :delete, data: { confirm: "Sei sicuro?" } %></p>
+              <% end %>
           </div>
         <% end %>
       </div>
@@ -54,7 +59,7 @@
     </div> <!-- /container -->
 
   </main>
-
+  <% if not current_user.is_admin? %>
   <footer class="container mb-4">
     <h3>Scrivi una recensione</h3>
     <%= form_with model: [ @escape, @escape.reviews.build ] do |form| %>
@@ -84,6 +89,7 @@
 
         <%= link_to "Torna a tutte le stanze" , escapes_path %>
   </footer>
+  <% end %>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
