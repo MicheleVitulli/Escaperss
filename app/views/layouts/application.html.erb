@@ -35,14 +35,5 @@ destroy_user_session_path, :method => :delete%>
 
 
 
-<% if not flash.empty? %>
-<hr>
-<h3>Notifications:</h3>
-<% flash.each do |type, msg| %>
-  <div>
-    <%= msg %>
-  </div>
-<% end %>
-<% end %>
 </body>
 </html>
