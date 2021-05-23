@@ -59,8 +59,9 @@
     </div> <!-- /container -->
 
   </main>
-  <% if not current_user.is_admin? %>
+  
   <footer class="container mb-4">
+  <% if not current_user.is_admin? %>
     <h3>Scrivi una recensione</h3>
     <%= form_with model: [ @escape, @escape.reviews.build ] do |form| %>
     <div class="form-group">
@@ -86,10 +87,11 @@
         <%= form.submit "Pubblica recensione", class: "btn btn-primary" %>
       </div>
       <% end %>
+      <% end %>
 
         <%= link_to "Torna a tutte le stanze" , escapes_path %>
   </footer>
-  <% end %>
+  
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
