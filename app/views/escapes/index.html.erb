@@ -1,9 +1,20 @@
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-</head>
+<head><style>
+      
+    </style>
+    </head>
+    <body>
 <div class="container">
     <h1>Tutte le Escapes</h1>
-    <table class="table table-hover">
+    <div class="d-flex justify-content-center m-3">
+    <div class="mx-3">
+    <input class="rounded " type="text" id="myInput"  placeholder="Cerca ...">
+    <button class="btn btn-warning rounded border border-dark" onclick="myFunction()"> Cerca per luogo </button>
+    <button class="btn btn-warning rounded border border-dark" onclick="myFunction2()"> Cerca per stanza</button>
+    <button class="btn btn-light rounded border border-dark mx-3" onclick="location.reload()"> Mostra tutte</button>
+    </div>
+    
+    </div>
+    <table class="table table-hover" id="tabella">
         <thead>
             <tr class="table-primary">
                 <th>Luogo</th>
@@ -21,7 +32,11 @@
                 <td><%= escape.Stanza %></td>
                 <td><%= escape.mediaVoti %></td>
                 <td><%= escape.mediaDiff %></td>
-                <td><a href=<%= escape.Descrizione%> target="_blank"><%= escape.Stanza %> sul sito di <%= escape.Luogo %> </a></td>
+                <td> <% if escape.Descrizione=="" %>
+                    <span>Nessun link è disponibile</span>
+                    <% else %>
+                    <a href=<%= escape.Descrizione%> target="_blank"><%= escape.Stanza %> sul sito di <%= escape.Luogo %> </a></td>
+                    <% end %>
                 <td>
                     <table style="width: 100%">
                         <% if current_user.is_admin? %>
@@ -39,7 +54,52 @@
         </tbody>
     </table>
     <% if current_user.is_admin? %>
-    <%= link_to "Aggiungi una nuova escape", new_escape_path%>
-    <%= link_to "Pagina degli utenti (solo amministratore)", admin_view_path, class: " text-danger"%>
+    <%= link_to "Aggiungi una nuova escape", new_escape_path, class: " text-danger"%>
+    <%= link_to "Pagina degli utenti", admin_view_path, class: " text-danger"%>
     <% end %>
 </div>
+<script>
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("tabella");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("th")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+function myFunction2() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("tabella");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+</body>

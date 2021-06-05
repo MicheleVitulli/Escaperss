@@ -1,35 +1,21 @@
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-
-  <!-- Bootstrap core CSS -->
-</head>
-
 <body>
-
   <main role="main">
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
         <h1 class="display-3">
           <%= @escape.Stanza%>
         </h1>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">
+        <h1><span class="badge badge-primary badge-lg" href="#" role="button">
             <%= @escape.Luogo%>
-          </a></p>
+          </span></h1>
       </div>
     </div>
 
     <div class="container">
-      <!-- Example row of columns -->
       <h1>Recensioni</h1>
       <div class="row">
-        <% @escape.reviews.each  do |rec| %>
+        <% @escape.reviews.each do |rec| %>
           <div class="col-md-4">
             <h4>Escaper: <%=link_to rec.user.email, user_reviews_path(rec.user)%>
             </h4>
@@ -42,66 +28,64 @@
             <p>Difficoltà: <span class="badge badge-primary">
                 <%= rec.difficoltà %>
               </span></p>
-              <% if current_user.is_admin? %>
-            <p><%= link_to "Modifica recensione" , edit_escape_review_path(rec.escape, rec), class: "text-danger" %>
-              <%= link_to 'Elimina recensione' , [rec.escape, rec], method: :delete, data: { confirm: "Sei sicuro?" }, class: "text-danger" %></p>
+            <% if current_user.is_admin? %>
+              <p>
+                <%= link_to "Modifica recensione" , edit_escape_review_path(rec.escape, rec), class: "text-danger" %>
+                  <%= link_to 'Elimina recensione' , [rec.escape, rec], method: :delete, data: { confirm: "Sei sicuro?"
+                    }, class: "text-danger" %>
+              </p>
               <% end %>
-              <% if current_user.email == rec.user.email%>
-              <p><%= link_to "Modifica recensione" , edit_escape_review_path(rec.escape, rec) %>
-              <%= link_to 'Elimina recensione' , [rec.escape, rec], method: :delete, data: { confirm: "Sei sicuro?" } %></p>
-              <% end %>
+                <% if current_user.email==rec.user.email%>
+                  <p>
+                    <%= link_to "Modifica recensione" , edit_escape_review_path(rec.escape, rec) %>
+                      <%= link_to 'Elimina recensione' , [rec.escape, rec], method: :delete, data: {
+                        confirm: "Sei sicuro?" } %>
+                  </p>
+                  <% end %>
           </div>
-        <% end %>
+          <% end %>
       </div>
 
       <hr>
 
-    </div> <!-- /container -->
+    </div>
 
   </main>
-  
+
   <footer class="container mb-4">
-  <% if not current_user.is_admin? %>
-    <h3>Scrivi una recensione</h3>
-    <%= form_with model: [ @escape, @escape.reviews.build ] do |form| %>
-    <div class="form-group">
-      <%= form.label :testo_recensione %><br>
-        <%= form.text_area :testo_recensione, class: 'form-control', rows: '1' %>
-    </div>
-      <div class="form-row">
-        <div class="col">
-          <%= form.label :valutazione %><br>
-          <%= form.collection_select :valutazione, [1,2,3,4,5], :to_i, :to_s, class: 'form-control' %>
+    <% if not current_user.is_admin? %>
+      <h3>Scrivi una recensione</h3>
+      <%= form_with model: [ @escape, @escape.reviews.build ] do |form| %>
+        <div class="form-group">
+          <%= form.label :testo_recensione %><br>
+            <%= form.text_area :testo_recensione, class: 'form-control' , rows: '1' %>
         </div>
-        <div class="col">
-          <%= form.label :difficoltà %><br>
-          <%= form.collection_select :difficoltà, [1,2,3,4,5], :to_i, :to_s%>
+        <div class="form-row">
+          <div class="col">
+            <%= form.label :valutazione %><br>
+              <%= form.collection_select :valutazione, [1,2,3,4,5], :to_i, :to_s, class: 'form-control' %>
+          </div>
+          <div class="col">
+            <%= form.label :difficoltà %><br>
+              <%= form.collection_select :difficoltà, [1,2,3,4,5], :to_i, :to_s%>
+          </div>
         </div>
-      </div>
-      <div class="form-row">
-        <p></p>
-      </div>
-      
+        <div class="form-row">
+          <p></p>
+        </div>
 
-      <div class="form-group">
-        <%= form.submit "Pubblica recensione", class: "btn btn-primary" %>
-      </div>
-      <% end %>
-      <% end %>
 
-        <%= link_to "Torna a tutte le stanze" , escapes_path %>
+        <div class="form-group">
+          <%= form.submit "Pubblica recensione" , class: "btn btn-primary" %>
+        </div>
+        <% end %>
+          <% end %>
+
+            <%= link_to "Torna a tutte le stanze" , escapes_path %>
   </footer>
-  
 
-  <!-- Bootstrap core JavaScript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-  <script src="../../assets/js/vendor/popper.min.js"></script>
-  <script src="../../dist/js/bootstrap.min.js"></script>
+
+
 
 
 </body>

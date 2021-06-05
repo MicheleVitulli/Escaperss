@@ -1,21 +1,32 @@
-<h1> <%= @user.email %> </h1>
-<hr>
-<h2> Recensioni </h2>
-<% if @user.reviews.empty? %>
-    <h3> Non si sono ancora recensioni </h3>
-<% end %>
+<div class="container">
+  <h1><%= @user.email %></h1>
+  <hr />
+  <h2>Recensioni</h2>
+  <% if @user.reviews.empty? %>
+  <h3>Non si sono ancora recensioni</h3>
+  <% end %> 
+  
+  <table class="table">
+      <thead>
+    <tr>
+        <th>Stanza</th>
+      <th>Valutazione</th>
+      <th>Difficoltà</th>
+      <th>Testo della recensione</th>
+    </tr>
+    </thead>
+    <% @user.reviews.each do |rec| %>
+    <tr>
+    <td><%= link_to Escape.find(rec.escape_id).Stanza,escape_path(rec.escape_id)%></td>
+    <td><%= rec.valutazione %></td>
+    <td><%= rec.difficoltà %></td>
+      <td><%= rec.testo_recensione %></td>
+    </tr>
+    <% end %>
+  </table>
 
-<% @user.reviews.each do |rec| %>
-<table>
-    <tr>
-        <th>Valutazione</th>
-        <th>Difficoltà</th>
-        <th>Descrizione</th>
-    </tr>
-    <tr>
-        <th><%= rec.valutazione %></th>
-        <th><%= rec.difficoltà %></th>
-        <th><%= rec.testo_recensione %></th>
-    </tr>
-</table>
-<% end %>
+  
+  <form>
+    <input type="button" value="Torna indietro" class="btn btn-primary" onclick="history.back()" />
+  </form>
+</div>
