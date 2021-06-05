@@ -1,0 +1,38 @@
+<h1>Escapers List</h1>
+
+ <table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Commands</th>
+  </tr>
+
+  <% @escs.each do |esc| %>
+  <tr>
+    <td><%= esc.user %></td>
+    <td><table style="width:100%">  
+		<td><%= link_to "Show Details", escaper_path(esc.id)%></td>
+    <td><%= link_to "Edit Profile", edit_escaper_path(esc.id)%></td>
+    <td><%= link_to "Destroy", escaper_path(esc.id), method: :delete,
+                  data: { confirm: "Are you sure?" } %></td>
+  	</table>
+	</td>
+  </tr>
+  <% end %> 
+ 
+</table> 
+
+
+
+<h2> Actions </h2>
+
+<ul>
+<li><%= link_to "Add A New Moviegoer", new_escaper_path %></li>
+<li><%= link_to "Back Movie List", escapers_path %></li>
+
+</ul>
+
+
+
+
+</ul>
+

@@ -1,0 +1,91 @@
+<body>
+  <main role="main">
+
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">
+          <%= @escape.Stanza%>
+        </h1>
+        <h1><span class="badge badge-primary badge-lg" href="#" role="button">
+            <%= @escape.Luogo%>
+          </span></h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1>Recensioni</h1>
+      <div class="row">
+        <% @escape.reviews.each do |rec| %>
+          <div class="col-md-4">
+            <h4>Escaper: <%=link_to rec.user.email, user_reviews_path(rec.user)%>
+            </h4>
+            <p>
+              <%= rec.testo_recensione %>
+            </p>
+            <p>Voto: <span class="badge badge-primary">
+                <%= rec.valutazione %>
+              </span></p>
+            <p>Difficoltà: <span class="badge badge-primary">
+                <%= rec.difficoltà %>
+              </span></p>
+            <% if current_user.is_admin? %>
+              <p>
+                <%= link_to "Modifica recensione" , edit_escape_review_path(rec.escape, rec), class: "text-danger" %>
+                  <%= link_to 'Elimina recensione' , [rec.escape, rec], method: :delete, data: { confirm: "Sei sicuro?"
+                    }, class: "text-danger" %>
+              </p>
+              <% end %>
+                <% if current_user.email==rec.user.email%>
+                  <p>
+                    <%= link_to "Modifica recensione" , edit_escape_review_path(rec.escape, rec) %>
+                      <%= link_to 'Elimina recensione' , [rec.escape, rec], method: :delete, data: {
+                        confirm: "Sei sicuro?" } %>
+                  </p>
+                  <% end %>
+          </div>
+          <% end %>
+      </div>
+
+      <hr>
+
+    </div>
+
+  </main>
+
+  <footer class="container mb-4">
+    <% if not current_user.is_admin? %>
+      <h3>Scrivi una recensione</h3>
+      <%= form_with model: [ @escape, @escape.reviews.build ] do |form| %>
+        <div class="form-group">
+          <%= form.label :testo_recensione %><br>
+            <%= form.text_area :testo_recensione, class: 'form-control' , rows: '1' %>
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <%= form.label :valutazione %><br>
+              <%= form.collection_select :valutazione, [1,2,3,4,5], :to_i, :to_s, class: 'form-control' %>
+          </div>
+          <div class="col">
+            <%= form.label :difficoltà %><br>
+              <%= form.collection_select :difficoltà, [1,2,3,4,5], :to_i, :to_s%>
+          </div>
+        </div>
+        <div class="form-row">
+          <p></p>
+        </div>
+
+
+        <div class="form-group">
+          <%= form.submit "Pubblica recensione" , class: "btn btn-primary" %>
+        </div>
+        <% end %>
+          <% end %>
+
+            <%= link_to "Torna a tutte le stanze" , escapes_path %>
+  </footer>
+
+
+
+
+
+</body>

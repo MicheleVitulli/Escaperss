@@ -1,0 +1,24 @@
+<h2> Reviews </h2>
+
+<% if @esc.reviews.empty? %>
+ <h3> No reviews yet! </h3>
+<% end %>
+
+<%@esc.reviews.each do |review| %>
+	<p>
+		<bf>Valutazione: </bf><%= review.valutazione %> <br>
+		<bf>Difficoltà: </bf><%= review.difficoltà %> <br>
+    <bf>Testo: </bf><%= review.testo_recensione %> <br>
+	 <bf>Stanza: </bf><%= review.escape.Stanza %> <br>
+  </p>
+
+	<p>
+  	<ul>
+  	<li> <%= link_to "Edit Review", edit_escape_review_path(review.escape, review)  %></li>
+  	<li><%= link_to 'Delete Review', [review.escape, review],
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+	</li>
+	</ul>
+
+<% end %>
