@@ -57,16 +57,16 @@
       <h3>Scrivi una recensione</h3>
       <%= form_with model: [ @escape, @escape.reviews.build ] do |form| %>
         <div class="form-group">
-          <%= form.label :testo_recensione %><br>
+          <%= form.label :testo_recensione, 'Testo recensione' %><br>
             <%= form.text_area :testo_recensione, class: 'form-control' , rows: '1' %>
         </div>
         <div class="form-row">
           <div class="col">
-            <%= form.label :valutazione %><br>
+            <%= form.label :valutazione, 'Valutazione' %><br>
               <%= form.collection_select :valutazione, [1,2,3,4,5], :to_i, :to_s, class: 'form-control' %>
           </div>
           <div class="col">
-            <%= form.label :difficoltà %><br>
+            <%= form.label :difficoltà, 'Difficoltà' %><br>
               <%= form.collection_select :difficoltà, [1,2,3,4,5], :to_i, :to_s%>
           </div>
         </div>
