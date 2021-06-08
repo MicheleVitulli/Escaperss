@@ -5,6 +5,9 @@
     <body>
 <div class="container">
     <h1>Tutte le Escapes</h1>
+    <% if current_user.is_admin? %>
+    <h3>Benvenuto Amministratore</h3>
+    <% end %>
     <div class="d-flex justify-content-center m-3">
     <div class="mx-3">
     <input class="rounded " type="text" id="myInput"  placeholder="Cerca ...">
