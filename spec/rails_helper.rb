@@ -1,3 +1,5 @@
+require 'support/dbcleaner.rb'
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
@@ -63,5 +65,5 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
   Capybara.default_driver = :selenium 
   config.include Devise::Test::ControllerHelpers, type: :controller
-  require 'support/dbcleaner.rb'
+  
 end
