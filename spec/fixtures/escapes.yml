@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: 
+  Luogo: Game Over
+  Stanza: Pirati dei Caraibi
+  Descrizione: https://www.roma.escapegameover.it/rooms/asylum.php
+two:
+  Luogo: Eneru
+  Stanza: Saloon
+  Descrizione: https://eneruescape.it/escape-room-saloon/
+# column: value

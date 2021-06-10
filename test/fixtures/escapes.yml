@@ -4,8 +4,12 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
+one: 
+  Luogo: Game Over
+  Stanza: Il manicomio
+  Descrizione: https://www.roma.escapegameover.it/rooms/asylum.php
+two:
+  Luogo: Eneru
+  Stanza: Saloon
+  Descrizione: https://eneruescape.it/escape-room-saloon/
 # column: value
