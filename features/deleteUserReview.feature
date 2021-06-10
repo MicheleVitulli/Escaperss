@@ -8,6 +8,6 @@ Feature: User can delete his review
         When I fill in "Testo recensione" with "Questa è una recensione di prova"
         And I press "Pubblica"
         Then I should see "Questa è una recensione di prova"
-        When I follow  confirm "Elimina recensione"
+        When I follow confirm "Elimina recensione"
         Then I should not see "Questa è una recensione di prova"
         

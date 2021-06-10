@@ -61,5 +61,7 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
- Capybara.default_driver = :selenium 
+  Capybara.default_driver = :selenium 
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  require 'support/dbcleaner.rb'
 end

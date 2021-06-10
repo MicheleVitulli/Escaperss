@@ -62,7 +62,7 @@ When('I select in {string} with {string}') do |string, string2|
   select string2, :from => string# Write code here that turns the phrase above into concrete actions
 end
 
-When('I follow  confirm {string}') do |string|
+When('I follow confirm {string}') do |string|
   click_link(string)
   page.accept_alert # Write code here that turns the phrase above into concrete actions
 end
