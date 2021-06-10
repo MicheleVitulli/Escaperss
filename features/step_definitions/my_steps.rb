@@ -67,5 +67,8 @@ When('I follow  confirm {string}') do |string|
   page.accept_alert # Write code here that turns the phrase above into concrete actions
 end
 
+Then('I should not see {string}') do |string|
+  expect(page).not_to have_text(string) # Write code here that turns the phrase above into concrete actions
+end
 
 
