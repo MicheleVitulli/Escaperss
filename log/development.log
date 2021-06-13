@@ -15929,3 +15929,2373 @@ Processing by EscapesController#index as HTML
 Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 9080)
 
 
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/models/user.rb:10:in `<class:User>'
+Started GET "/" for 127.0.0.1 at 2021-06-14 00:39:56 +0200
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EscapesController#index as HTML
+Completed 401 Unauthorized in 9ms (ActiveRecord: 0.0ms | Allocations: 2506)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-06-14 00:39:56 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.8ms | Allocations: 830)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 4015)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 11447)
+Completed 200 OK in 23ms (Views: 18.7ms | ActiveRecord: 0.2ms | Allocations: 19728)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2021-06-14 00:40:05 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"tommasoac@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entra"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tommasoac@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.6ms | Allocations: 2749)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"tommasoac@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entra"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.2ms | Allocations: 242)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1256)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 5085)
+Completed 200 OK in 285ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 6565)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2021-06-14 00:40:07 +0200
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1414)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 5449)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms | Allocations: 7989)
+
+
+Started POST "/users" for 127.0.0.1 at 2021-06-14 00:40:19 +0200
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"tommasoac@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Registrati"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tommasoac@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "tommasoac@gmail.com"], ["encrypted_password", "$2a$12$nml1iryeWT4ObysQNG7nKOp4/6O6YaTd6fpH9Z9ZTImcqCF0Q.znC"], ["created_at", "2021-06-13 22:40:19.501368"], ["updated_at", "2021-06-13 22:40:19.501368"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 288ms (ActiveRecord: 2.3ms | Allocations: 8753)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-14 00:40:19 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.0ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  Rendered escapes/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1466)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 5405)
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 8949)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2021-06-14 00:40:22 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.3ms | Allocations: 2671)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-14 00:40:22 +0200
+Processing by EscapesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 288)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-06-14 00:40:22 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.6ms | Allocations: 229)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1195)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 4993)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms | Allocations: 5735)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2021-06-14 00:40:28 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"michele.vitulli@outlook.it", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entra"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "michele.vitulli@outlook.it"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 289ms (ActiveRecord: 0.2ms | Allocations: 3228)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-14 00:40:28 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.0ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  Rendered escapes/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 764)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 4433)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.1ms | Allocations: 5987)
+
+
+Started GET "/escapes/new" for 127.0.0.1 at 2021-06-14 00:40:30 +0200
+Processing by EscapesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/new.html.erb within layouts/application
+  Rendered escapes/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 995)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 4939)
+Completed 200 OK in 20ms (Views: 9.0ms | ActiveRecord: 0.6ms | Allocations: 10841)
+
+
+Started POST "/escapes" for 127.0.0.1 at 2021-06-14 00:41:43 +0200
+Processing by EscapesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "escape"=>{"Luogo"=>"Alberone", "Stanza"=>"Nautilus", "Descrizione"=>"https://www.fugacemente.it/roma-alberone/escape-room/nautilus/"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/escapes_controller.rb:27:in `create'
+  [1m[36mEscape Create (0.3ms)[0m  [1m[32mINSERT INTO "escapes" ("Luogo", "Stanza", "Descrizione", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["Luogo", "Alberone"], ["Stanza", "Nautilus"], ["Descrizione", "https://www.fugacemente.it/roma-alberone/escape-room/nautilus/"], ["created_at", "2021-06-13 22:41:43.095778"], ["updated_at", "2021-06-13 22:41:43.095778"]]
+  ↳ app/controllers/escapes_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/escapes_controller.rb:27:in `create'
+Redirected to http://127.0.0.1:3000/escapes
+Completed 302 Found in 28ms (ActiveRecord: 1.3ms | Allocations: 8337)
+
+
+Started GET "/escapes" for 127.0.0.1 at 2021-06-14 00:41:43 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.0ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 12.0ms | Allocations: 6877)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 10580)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.6ms | Allocations: 12306)
+
+
+Started GET "/escapes/new" for 127.0.0.1 at 2021-06-14 00:42:53 +0200
+Processing by EscapesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/new.html.erb within layouts/application
+  Rendered escapes/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 470)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 4230)
+Completed 200 OK in 35ms (Views: 13.1ms | ActiveRecord: 0.2ms | Allocations: 5968)
+
+
+Started POST "/escapes" for 127.0.0.1 at 2021-06-14 00:43:13 +0200
+Processing by EscapesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "escape"=>{"Luogo"=>"Magic Escape", "Stanza"=>"Houdini", "Descrizione"=>"https://magicescape.it/le-stanze/lo-studio-di-harry-houdini/"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/escapes_controller.rb:27:in `create'
+  [1m[36mEscape Create (0.7ms)[0m  [1m[32mINSERT INTO "escapes" ("Luogo", "Stanza", "Descrizione", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["Luogo", "Magic Escape"], ["Stanza", "Houdini"], ["Descrizione", "https://magicescape.it/le-stanze/lo-studio-di-harry-houdini/"], ["created_at", "2021-06-13 22:43:13.970359"], ["updated_at", "2021-06-13 22:43:13.970359"]]
+  ↳ app/controllers/escapes_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/escapes_controller.rb:27:in `create'
+Redirected to http://127.0.0.1:3000/escapes
+Completed 302 Found in 14ms (ActiveRecord: 2.2ms | Allocations: 3925)
+
+
+Started GET "/escapes" for 127.0.0.1 at 2021-06-14 00:43:13 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 23.6ms | Allocations: 5466)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.9ms | Allocations: 9133)
+Completed 200 OK in 35ms (Views: 30.8ms | ActiveRecord: 1.0ms | Allocations: 10688)
+
+
+Started GET "/escapes/new" for 127.0.0.1 at 2021-06-14 00:43:39 +0200
+Processing by EscapesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/new.html.erb within layouts/application
+  Rendered escapes/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 440)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 4723)
+Completed 200 OK in 15ms (Views: 10.7ms | ActiveRecord: 0.2ms | Allocations: 6300)
+
+
+Started POST "/escapes" for 127.0.0.1 at 2021-06-14 00:43:54 +0200
+Processing by EscapesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "escape"=>{"Luogo"=>"Magic Escape", "Stanza"=>"Vendetta", "Descrizione"=>"https://magicescape.it/prodotto/vendetta-per-5-persone/"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/escapes_controller.rb:27:in `create'
+  [1m[36mEscape Create (0.6ms)[0m  [1m[32mINSERT INTO "escapes" ("Luogo", "Stanza", "Descrizione", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["Luogo", "Magic Escape"], ["Stanza", "Vendetta"], ["Descrizione", "https://magicescape.it/prodotto/vendetta-per-5-persone/"], ["created_at", "2021-06-13 22:43:54.430643"], ["updated_at", "2021-06-13 22:43:54.430643"]]
+  ↳ app/controllers/escapes_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/escapes_controller.rb:27:in `create'
+Redirected to http://127.0.0.1:3000/escapes
+Completed 302 Found in 13ms (ActiveRecord: 1.9ms | Allocations: 3829)
+
+
+Started GET "/escapes" for 127.0.0.1 at 2021-06-14 00:43:54 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.2ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 18.6ms | Allocations: 7810)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 11461)
+Completed 200 OK in 29ms (Views: 24.5ms | ActiveRecord: 1.0ms | Allocations: 13014)
+
+
+Started GET "/escapes/new" for 127.0.0.1 at 2021-06-14 00:44:06 +0200
+Processing by EscapesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/new.html.erb within layouts/application
+  Rendered escapes/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 440)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 4256)
+Completed 200 OK in 15ms (Views: 11.3ms | ActiveRecord: 0.1ms | Allocations: 6256)
+
+
+Started POST "/escapes" for 127.0.0.1 at 2021-06-14 00:44:13 +0200
+Processing by EscapesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "escape"=>{"Luogo"=>"Game Over", "Stanza"=>"Pirati dei Caraibi", "Descrizione"=>"https://roma.escapegameover.it/rooms/pirates-of-caribbean.php"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/escapes_controller.rb:27:in `create'
+  [1m[36mEscape Create (0.6ms)[0m  [1m[32mINSERT INTO "escapes" ("Luogo", "Stanza", "Descrizione", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["Luogo", "Game Over"], ["Stanza", "Pirati dei Caraibi"], ["Descrizione", "https://roma.escapegameover.it/rooms/pirates-of-caribbean.php"], ["created_at", "2021-06-13 22:44:13.341453"], ["updated_at", "2021-06-13 22:44:13.341453"]]
+  ↳ app/controllers/escapes_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/escapes_controller.rb:27:in `create'
+Redirected to http://127.0.0.1:3000/escapes
+Completed 302 Found in 11ms (ActiveRecord: 1.8ms | Allocations: 3828)
+
+
+Started GET "/escapes" for 127.0.0.1 at 2021-06-14 00:44:13 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 25.2ms | Allocations: 10166)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.6ms | Allocations: 13830)
+Completed 200 OK in 35ms (Views: 30.0ms | ActiveRecord: 1.4ms | Allocations: 15384)
+
+
+Started GET "/escapes/new" for 127.0.0.1 at 2021-06-14 00:44:26 +0200
+Processing by EscapesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/new.html.erb within layouts/application
+  Rendered escapes/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 440)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 4690)
+Completed 200 OK in 16ms (Views: 11.6ms | ActiveRecord: 0.2ms | Allocations: 6286)
+
+
+Started POST "/escapes" for 127.0.0.1 at 2021-06-14 00:46:02 +0200
+Processing by EscapesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "escape"=>{"Luogo"=>"Nox Escape", "Stanza"=>"Black Mirror", "Descrizione"=>"https://www.nox-escape.com/prenota/"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/escapes_controller.rb:27:in `create'
+  [1m[36mEscape Create (1.3ms)[0m  [1m[32mINSERT INTO "escapes" ("Luogo", "Stanza", "Descrizione", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["Luogo", "Nox Escape"], ["Stanza", "Black Mirror"], ["Descrizione", "https://www.nox-escape.com/prenota/"], ["created_at", "2021-06-13 22:46:02.634331"], ["updated_at", "2021-06-13 22:46:02.634331"]]
+  ↳ app/controllers/escapes_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/escapes_controller.rb:27:in `create'
+Redirected to http://127.0.0.1:3000/escapes
+Completed 302 Found in 14ms (ActiveRecord: 3.0ms | Allocations: 3828)
+
+
+Started GET "/escapes" for 127.0.0.1 at 2021-06-14 00:46:02 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 26.4ms | Allocations: 12517)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.0ms | Allocations: 16168)
+Completed 200 OK in 38ms (Views: 33.5ms | ActiveRecord: 1.2ms | Allocations: 17721)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2021-06-14 00:46:15 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.1ms | Allocations: 1897)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-14 00:46:15 +0200
+Processing by EscapesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 250)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-06-14 00:46:15 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.4ms | Allocations: 225)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1158)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 4843)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 5537)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2021-06-14 00:46:18 +0200
+Started GET "/users/auth/google_oauth2/callback?state=7fef9ba252e9fa8df35783b3be873cc3fe976d3d1b84f98b&code=4%2F0AY0e-g7n-T1SYneBojHP42j5WSGqm2bmv6-zjGx-VHzXR4dxvoLAtOgz2u23yuHf2OnKEQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none" for 127.0.0.1 at 2021-06-14 00:46:19 +0200
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"7fef9ba252e9fa8df35783b3be873cc3fe976d3d1b84f98b", "code"=>"4/0AY0e-g7n-T1SYneBojHP42j5WSGqm2bmv6-zjGx-VHzXR4dxvoLAtOgz2u23yuHf2OnKEQ", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "prompt"=>"none"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "vitulli430@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16:in `from_omniauth'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:19:in `from_omniauth'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "vitulli430@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:19:in `from_omniauth'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "vitulli430@gmail.com"], ["encrypted_password", "$2a$12$KAYZzUc.9usB1vC2eGxCLulUCADtWh8U28H85pCF9rrmsyigi2swW"], ["created_at", "2021-06-13 22:46:19.763263"], ["updated_at", "2021-06-13 22:46:19.763263"]]
+  ↳ app/models/user.rb:19:in `from_omniauth'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:19:in `from_omniauth'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 285ms (ActiveRecord: 1.4ms | Allocations: 4735)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-14 00:46:19 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.0ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 12195)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 15993)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.4ms | Allocations: 17624)
+
+
+Started GET "/escapes/1" for 127.0.0.1 at 2021-06-14 00:46:24 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.2ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/views/escapes/show.html.erb:18
+  Rendered escapes/show.html.erb within layouts/application (Duration: 21.5ms | Allocations: 7879)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 11572)
+Completed 200 OK in 37ms (Views: 27.0ms | ActiveRecord: 1.1ms | Allocations: 15327)
+
+
+Started POST "/escapes/1/reviews" for 127.0.0.1 at 2021-06-14 00:46:44 +0200
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"testo_recensione"=>"Stanza molto curata, ma forse troppo difficile", "valutazione"=>"3", "difficoltà"=>"5"}, "commit"=>"Pubblica recensione", "escape_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mReview Create (1.1ms)[0m  [1m[32mINSERT INTO "reviews" ("valutazione", "difficoltà", "testo_recensione", "escape_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["valutazione", 3], ["difficoltà", 5], ["testo_recensione", "Stanza molto curata, ma forse troppo difficile"], ["escape_id", 1], ["user_id", 3], ["created_at", "2021-06-13 22:46:44.234764"], ["updated_at", "2021-06-13 22:46:44.234764"]]
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/escapes/1
+Completed 302 Found in 17ms (ActiveRecord: 2.0ms | Allocations: 5741)
+
+
+Started GET "/escapes/1" for 127.0.0.1 at 2021-06-14 00:46:44 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 13.6ms | Allocations: 3287)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 7052)
+Completed 200 OK in 27ms (Views: 21.6ms | ActiveRecord: 0.6ms | Allocations: 9811)
+
+
+Started GET "/escapes" for 127.0.0.1 at 2021-06-14 00:46:51 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.2ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 32.8ms | Allocations: 12335)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 39.4ms | Allocations: 16418)
+Completed 200 OK in 44ms (Views: 38.6ms | ActiveRecord: 1.7ms | Allocations: 18007)
+
+
+Started GET "/escapes/2" for 127.0.0.1 at 2021-06-14 00:46:54 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/views/escapes/show.html.erb:18
+  Rendered escapes/show.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1917)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 5657)
+Completed 200 OK in 25ms (Views: 15.7ms | ActiveRecord: 1.0ms | Allocations: 8882)
+
+
+Started POST "/escapes/2/reviews" for 127.0.0.1 at 2021-06-14 00:47:30 +0200
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"testo_recensione"=>"Interessante e ben strutturata, peccato per qualche enigma fuori contesto", "valutazione"=>"3", "difficoltà"=>"3"}, "commit"=>"Pubblica recensione", "escape_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mReview Create (0.7ms)[0m  [1m[32mINSERT INTO "reviews" ("valutazione", "difficoltà", "testo_recensione", "escape_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["valutazione", 3], ["difficoltà", 3], ["testo_recensione", "Interessante e ben strutturata, peccato per qualche enigma fuori contesto"], ["escape_id", 2], ["user_id", 3], ["created_at", "2021-06-13 22:47:30.531774"], ["updated_at", "2021-06-13 22:47:30.531774"]]
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/escapes/2
+Completed 302 Found in 16ms (ActiveRecord: 2.4ms | Allocations: 4525)
+
+
+Started GET "/escapes/2" for 127.0.0.1 at 2021-06-14 00:47:30 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2834)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 6471)
+Completed 200 OK in 21ms (Views: 12.2ms | ActiveRecord: 0.8ms | Allocations: 9177)
+
+
+Started GET "/escapes" for 127.0.0.1 at 2021-06-14 00:47:34 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.2ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 31.3ms | Allocations: 12309)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.1ms | Allocations: 15993)
+Completed 200 OK in 43ms (Views: 37.5ms | ActiveRecord: 1.8ms | Allocations: 18013)
+
+
+Started GET "/escapes/3" for 127.0.0.1 at 2021-06-14 00:47:45 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/views/escapes/show.html.erb:18
+  Rendered escapes/show.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1917)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 5693)
+Completed 200 OK in 24ms (Views: 15.4ms | ActiveRecord: 0.7ms | Allocations: 8885)
+
+
+Started POST "/escapes/3/reviews" for 127.0.0.1 at 2021-06-14 00:48:15 +0200
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"testo_recensione"=>"Stanza divertente e con molte sorprese", "valutazione"=>"4", "difficoltà"=>"3"}, "commit"=>"Pubblica recensione", "escape_id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEscape Load (0.2ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mReview Create (0.9ms)[0m  [1m[32mINSERT INTO "reviews" ("valutazione", "difficoltà", "testo_recensione", "escape_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["valutazione", 4], ["difficoltà", 3], ["testo_recensione", "Stanza divertente e con molte sorprese"], ["escape_id", 3], ["user_id", 3], ["created_at", "2021-06-13 22:48:15.758438"], ["updated_at", "2021-06-13 22:48:15.758438"]]
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/escapes/3
+Completed 302 Found in 16ms (ActiveRecord: 2.6ms | Allocations: 4525)
+
+
+Started GET "/escapes/3" for 127.0.0.1 at 2021-06-14 00:48:15 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2834)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 6466)
+Completed 200 OK in 17ms (Views: 12.2ms | ActiveRecord: 0.4ms | Allocations: 9172)
+
+
+Started POST "/escapes/3/reviews" for 127.0.0.1 at 2021-06-14 00:48:18 +0200
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"testo_recensione"=>"", "valutazione"=>"1", "difficoltà"=>"1"}, "commit"=>"Pubblica recensione", "escape_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEscape Load (0.5ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mReview Create (0.8ms)[0m  [1m[32mINSERT INTO "reviews" ("valutazione", "difficoltà", "testo_recensione", "escape_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["valutazione", 1], ["difficoltà", 1], ["testo_recensione", ""], ["escape_id", 3], ["user_id", 3], ["created_at", "2021-06-13 22:48:18.897188"], ["updated_at", "2021-06-13 22:48:18.897188"]]
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/escapes/3
+Completed 302 Found in 16ms (ActiveRecord: 2.9ms | Allocations: 4514)
+
+
+Started GET "/escapes/3" for 127.0.0.1 at 2021-06-14 00:48:18 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 8.8ms | Allocations: 3720)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 7368)
+Completed 200 OK in 24ms (Views: 15.6ms | ActiveRecord: 0.7ms | Allocations: 10640)
+
+
+Started DELETE "/escapes/3/reviews/4" for 127.0.0.1 at 2021-06-14 00:48:29 +0200
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "escape_id"=>"3", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEscape Load (0.2ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:27:in `destroy'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ? AND "reviews"."id" = ? LIMIT ?[0m  [["escape_id", 3], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:28:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:29:in `destroy'
+  [1m[36mReview Destroy (0.7ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/reviews_controller.rb:29:in `destroy'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:29:in `destroy'
+Redirected to http://127.0.0.1:3000/escapes/3
+Completed 302 Found in 15ms (ActiveRecord: 2.3ms | Allocations: 4702)
+
+
+Started GET "/escapes/3" for 127.0.0.1 at 2021-06-14 00:48:29 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 7.0ms | Allocations: 3646)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 7545)
+Completed 200 OK in 21ms (Views: 13.8ms | ActiveRecord: 0.5ms | Allocations: 11707)
+
+
+Started GET "/users/reviews/3" for 127.0.0.1 at 2021-06-14 00:48:30 +0200
+Processing by ReviewsController#user_reviews as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:39:in `user_reviews'
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/user_reviews.html.erb within layouts/application
+  [1m[36mReview Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/reviews/user_reviews.html.erb:5
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/reviews/user_reviews.html.erb:18
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/user_reviews.html.erb:20
+  [1m[36mEscape Load (0.2ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/reviews/user_reviews.html.erb:20
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/reviews/user_reviews.html.erb:20
+  Rendered reviews/user_reviews.html.erb within layouts/application (Duration: 13.2ms | Allocations: 4966)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 8751)
+Completed 200 OK in 32ms (Views: 23.7ms | ActiveRecord: 1.2ms | Allocations: 12396)
+
+
+Started GET "/escapes" for 127.0.0.1 at 2021-06-14 00:48:38 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 37.1ms | Allocations: 12334)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 43.7ms | Allocations: 16436)
+Completed 200 OK in 48ms (Views: 42.6ms | ActiveRecord: 2.0ms | Allocations: 18095)
+
+
+Started GET "/escapes/4" for 127.0.0.1 at 2021-06-14 00:48:42 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/views/escapes/show.html.erb:18
+  Rendered escapes/show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2010)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 5766)
+Completed 200 OK in 23ms (Views: 14.9ms | ActiveRecord: 0.6ms | Allocations: 8984)
+
+
+Started POST "/escapes/4/reviews" for 127.0.0.1 at 2021-06-14 00:49:22 +0200
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"testo_recensione"=>"Stanza troppo difficile, soprattuto per gli enigmi che non sono presentati nel modo giusto", "valutazione"=>"2", "difficoltà"=>"5"}, "commit"=>"Pubblica recensione", "escape_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mReview Create (0.7ms)[0m  [1m[32mINSERT INTO "reviews" ("valutazione", "difficoltà", "testo_recensione", "escape_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["valutazione", 2], ["difficoltà", 5], ["testo_recensione", "Stanza troppo difficile, soprattuto per gli enigmi che non sono presentati nel modo giusto"], ["escape_id", 4], ["user_id", 3], ["created_at", "2021-06-13 22:49:22.198855"], ["updated_at", "2021-06-13 22:49:22.198855"]]
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/escapes/4
+Completed 302 Found in 15ms (ActiveRecord: 2.1ms | Allocations: 4608)
+
+
+Started GET "/escapes/4" for 127.0.0.1 at 2021-06-14 00:49:22 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2837)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 6485)
+Completed 200 OK in 20ms (Views: 13.9ms | ActiveRecord: 0.6ms | Allocations: 9192)
+
+
+Started GET "/escapes" for 127.0.0.1 at 2021-06-14 00:49:24 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 33.9ms | Allocations: 12329)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 40.4ms | Allocations: 15997)
+Completed 200 OK in 45ms (Views: 40.1ms | ActiveRecord: 2.1ms | Allocations: 18004)
+
+
+Started GET "/escapes/5" for 127.0.0.1 at 2021-06-14 00:49:33 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/views/escapes/show.html.erb:18
+  Rendered escapes/show.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1914)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 5662)
+Completed 200 OK in 22ms (Views: 14.2ms | ActiveRecord: 0.6ms | Allocations: 8442)
+
+
+Started POST "/escapes/5/reviews" for 127.0.0.1 at 2021-06-14 00:50:00 +0200
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"testo_recensione"=>"Una delle migliori che ho fatto, enigmi coerenti e avvincenti", "valutazione"=>"5", "difficoltà"=>"5"}, "commit"=>"Pubblica recensione", "escape_id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEscape Load (0.2ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mReview Create (1.0ms)[0m  [1m[32mINSERT INTO "reviews" ("valutazione", "difficoltà", "testo_recensione", "escape_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["valutazione", 5], ["difficoltà", 5], ["testo_recensione", "Una delle migliori che ho fatto, enigmi coerenti e avvincenti"], ["escape_id", 5], ["user_id", 3], ["created_at", "2021-06-13 22:50:01.010325"], ["updated_at", "2021-06-13 22:50:01.010325"]]
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/escapes/5
+Completed 302 Found in 36ms (ActiveRecord: 2.5ms | Allocations: 4525)
+
+
+Started GET "/escapes/5" for 127.0.0.1 at 2021-06-14 00:50:01 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.2ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 7.0ms | Allocations: 2834)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 6482)
+Completed 200 OK in 24ms (Views: 15.2ms | ActiveRecord: 1.0ms | Allocations: 9188)
+
+
+Started GET "/escapes" for 127.0.0.1 at 2021-06-14 00:50:02 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 34.4ms | Allocations: 12815)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 40.6ms | Allocations: 16476)
+Completed 200 OK in 44ms (Views: 38.9ms | ActiveRecord: 2.4ms | Allocations: 18033)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2021-06-14 00:50:07 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms | Allocations: 1866)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-14 00:50:07 +0200
+Processing by EscapesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 249)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-06-14 00:50:07 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.4ms | Allocations: 226)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1154)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 4855)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.0ms | Allocations: 5552)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2021-06-14 00:50:14 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"tommasoac@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entra"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tommasoac@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 282ms (ActiveRecord: 0.2ms | Allocations: 2388)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-14 00:50:15 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 12191)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 15858)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.5ms | Allocations: 17409)
+
+
+Started GET "/escapes/1" for 127.0.0.1 at 2021-06-14 00:50:20 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2741)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 6480)
+Completed 200 OK in 26ms (Views: 16.9ms | ActiveRecord: 1.2ms | Allocations: 9687)
+
+
+Started POST "/escapes/1/reviews" for 127.0.0.1 at 2021-06-14 00:52:53 +0200
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"testo_recensione"=>"Scenografia pazzesca ma alcuni enigmi completamente campati per aria", "valutazione"=>"3", "difficoltà"=>"4"}, "commit"=>"Pubblica recensione", "escape_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEscape Load (0.2ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mReview Create (0.8ms)[0m  [1m[32mINSERT INTO "reviews" ("valutazione", "difficoltà", "testo_recensione", "escape_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["valutazione", 3], ["difficoltà", 4], ["testo_recensione", "Scenografia pazzesca ma alcuni enigmi completamente campati per aria"], ["escape_id", 1], ["user_id", 2], ["created_at", "2021-06-13 22:52:53.769804"], ["updated_at", "2021-06-13 22:52:53.769804"]]
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/escapes/1
+Completed 302 Found in 18ms (ActiveRecord: 2.4ms | Allocations: 4526)
+
+
+Started GET "/escapes/1" for 127.0.0.1 at 2021-06-14 00:52:53 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 8.5ms | Allocations: 3659)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 7307)
+Completed 200 OK in 20ms (Views: 15.1ms | ActiveRecord: 0.5ms | Allocations: 10013)
+
+
+Started GET "/escapes" for 127.0.0.1 at 2021-06-14 00:52:58 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 34.5ms | Allocations: 12353)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 40.8ms | Allocations: 16037)
+Completed 200 OK in 46ms (Views: 40.2ms | ActiveRecord: 2.1ms | Allocations: 18055)
+
+
+Started GET "/escapes/2" for 127.0.0.1 at 2021-06-14 00:53:02 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 8.6ms | Allocations: 2752)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 6495)
+Completed 200 OK in 26ms (Views: 18.0ms | ActiveRecord: 0.8ms | Allocations: 9723)
+
+
+Started POST "/escapes/2/reviews" for 127.0.0.1 at 2021-06-14 00:53:25 +0200
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"testo_recensione"=>"Presentata come una stanza molto complessa, si rivela non soddisfare del tutto le aspettative", "valutazione"=>"4", "difficoltà"=>"3"}, "commit"=>"Pubblica recensione", "escape_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEscape Load (0.2ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mReview Create (0.8ms)[0m  [1m[32mINSERT INTO "reviews" ("valutazione", "difficoltà", "testo_recensione", "escape_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["valutazione", 4], ["difficoltà", 3], ["testo_recensione", "Presentata come una stanza molto complessa, si rivela non soddisfare del tutto le aspettative"], ["escape_id", 2], ["user_id", 2], ["created_at", "2021-06-13 22:53:25.141601"], ["updated_at", "2021-06-13 22:53:25.141601"]]
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/escapes/2
+Completed 302 Found in 15ms (ActiveRecord: 2.5ms | Allocations: 4525)
+
+
+Started GET "/escapes/2" for 127.0.0.1 at 2021-06-14 00:53:25 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 8.3ms | Allocations: 3659)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 7291)
+Completed 200 OK in 24ms (Views: 15.1ms | ActiveRecord: 1.0ms | Allocations: 9998)
+
+
+Started GET "/escapes" for 127.0.0.1 at 2021-06-14 00:53:27 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.2ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 33.4ms | Allocations: 12359)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 39.6ms | Allocations: 16051)
+Completed 200 OK in 45ms (Views: 39.2ms | ActiveRecord: 1.8ms | Allocations: 18049)
+
+
+Started GET "/escapes/3" for 127.0.0.1 at 2021-06-14 00:53:31 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 10.7ms | Allocations: 2749)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 6489)
+Completed 200 OK in 28ms (Views: 18.3ms | ActiveRecord: 1.5ms | Allocations: 9703)
+
+
+Started POST "/escapes/3/reviews" for 127.0.0.1 at 2021-06-14 00:53:51 +0200
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"testo_recensione"=>"Stanza con altissimo potenziale, putroppo giocata in troppi", "valutazione"=>"4", "difficoltà"=>"4"}, "commit"=>"Pubblica recensione", "escape_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEscape Load (0.2ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mReview Create (1.1ms)[0m  [1m[32mINSERT INTO "reviews" ("valutazione", "difficoltà", "testo_recensione", "escape_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["valutazione", 4], ["difficoltà", 4], ["testo_recensione", "Stanza con altissimo potenziale, putroppo giocata in troppi"], ["escape_id", 3], ["user_id", 2], ["created_at", "2021-06-13 22:53:51.439856"], ["updated_at", "2021-06-13 22:53:51.439856"]]
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/escapes/3
+Completed 302 Found in 16ms (ActiveRecord: 2.6ms | Allocations: 4525)
+
+
+Started GET "/escapes/3" for 127.0.0.1 at 2021-06-14 00:53:51 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 8.6ms | Allocations: 3659)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 7307)
+Completed 200 OK in 21ms (Views: 15.1ms | ActiveRecord: 0.7ms | Allocations: 10013)
+
+
+Started GET "/escapes" for 127.0.0.1 at 2021-06-14 00:53:54 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.2ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 34.0ms | Allocations: 12388)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 39.5ms | Allocations: 16072)
+Completed 200 OK in 44ms (Views: 39.3ms | ActiveRecord: 1.7ms | Allocations: 18066)
+
+
+Started GET "/escapes/4" for 127.0.0.1 at 2021-06-14 00:54:07 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 10.4ms | Allocations: 2745)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 6495)
+Completed 200 OK in 29ms (Views: 20.0ms | ActiveRecord: 1.1ms | Allocations: 9711)
+
+
+Started POST "/escapes/4/reviews" for 127.0.0.1 at 2021-06-14 00:54:32 +0200
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"testo_recensione"=>"Bella scenografia, enigmi troppo dispersivi e complessi", "valutazione"=>"3", "difficoltà"=>"5"}, "commit"=>"Pubblica recensione", "escape_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEscape Load (0.2ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mReview Create (1.0ms)[0m  [1m[32mINSERT INTO "reviews" ("valutazione", "difficoltà", "testo_recensione", "escape_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["valutazione", 3], ["difficoltà", 5], ["testo_recensione", "Bella scenografia, enigmi troppo dispersivi e complessi"], ["escape_id", 4], ["user_id", 2], ["created_at", "2021-06-13 22:54:32.240141"], ["updated_at", "2021-06-13 22:54:32.240141"]]
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/escapes/4
+Completed 302 Found in 17ms (ActiveRecord: 2.8ms | Allocations: 4525)
+
+
+Started GET "/escapes/4" for 127.0.0.1 at 2021-06-14 00:54:32 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 8.9ms | Allocations: 3659)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 7307)
+Completed 200 OK in 24ms (Views: 15.5ms | ActiveRecord: 0.9ms | Allocations: 10014)
+
+
+Started GET "/escapes" for 127.0.0.1 at 2021-06-14 00:54:38 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 36.3ms | Allocations: 12421)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 43.2ms | Allocations: 16498)
+Completed 200 OK in 47ms (Views: 42.0ms | ActiveRecord: 2.0ms | Allocations: 18086)
+
+
+Started GET "/escapes/5" for 127.0.0.1 at 2021-06-14 00:54:58 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 10.0ms | Allocations: 2764)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 6515)
+Completed 200 OK in 27ms (Views: 18.4ms | ActiveRecord: 0.9ms | Allocations: 9711)
+
+
+Started POST "/escapes/5/reviews" for 127.0.0.1 at 2021-06-14 00:55:07 +0200
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"testo_recensione"=>"Totale, per escapers di livello. Proprietario completamente dissociato", "valutazione"=>"5", "difficoltà"=>"5"}, "commit"=>"Pubblica recensione", "escape_id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEscape Load (0.2ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mReview Create (1.0ms)[0m  [1m[32mINSERT INTO "reviews" ("valutazione", "difficoltà", "testo_recensione", "escape_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["valutazione", 5], ["difficoltà", 5], ["testo_recensione", "Totale, per escapers di livello. Proprietario completamente dissociato"], ["escape_id", 5], ["user_id", 2], ["created_at", "2021-06-13 22:55:07.890884"], ["updated_at", "2021-06-13 22:55:07.890884"]]
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/escapes/5
+Completed 302 Found in 18ms (ActiveRecord: 2.7ms | Allocations: 4525)
+
+
+Started GET "/escapes/5" for 127.0.0.1 at 2021-06-14 00:55:07 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 8.2ms | Allocations: 3659)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 7307)
+Completed 200 OK in 20ms (Views: 14.3ms | ActiveRecord: 0.6ms | Allocations: 10014)
+
+
+Started GET "/escapes" for 127.0.0.1 at 2021-06-14 00:55:12 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.2ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 35.0ms | Allocations: 12412)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 40.8ms | Allocations: 16095)
+Completed 200 OK in 46ms (Views: 40.2ms | ActiveRecord: 1.9ms | Allocations: 18099)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2021-06-14 00:55:27 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.2ms | Allocations: 1827)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-14 00:55:27 +0200
+Processing by EscapesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 237)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-06-14 00:55:27 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.4ms | Allocations: 224)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1132)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 4833)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.0ms | Allocations: 5518)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2021-06-14 00:55:31 +0200
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 815)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 5105)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms | Allocations: 5795)
+
+
+Started POST "/users" for 127.0.0.1 at 2021-06-14 00:56:00 +0200
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"stefano@yahoo.it", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Registrati"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "stefano@yahoo.it"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "stefano@yahoo.it"], ["encrypted_password", "$2a$12$wSZAdy18rxZodNxt0xAbNuOasuernwskH92IG1jasrgs4TtwO52JW"], ["created_at", "2021-06-13 22:56:00.338143"], ["updated_at", "2021-06-13 22:56:00.338143"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 286ms (ActiveRecord: 1.5ms | Allocations: 5821)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-14 00:56:00 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.0ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 12261)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 15922)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.4ms | Allocations: 17474)
+
+
+Started GET "/escapes/1" for 127.0.0.1 at 2021-06-14 00:56:04 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 11.2ms | Allocations: 3663)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 7315)
+Completed 200 OK in 27ms (Views: 18.2ms | ActiveRecord: 1.0ms | Allocations: 10514)
+
+
+Started POST "/escapes/1/reviews" for 127.0.0.1 at 2021-06-14 00:56:31 +0200
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"testo_recensione"=>"Stanza lunga e complessa, enigmi interessanti", "valutazione"=>"3", "difficoltà"=>"5"}, "commit"=>"Pubblica recensione", "escape_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEscape Load (0.2ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mReview Create (0.7ms)[0m  [1m[32mINSERT INTO "reviews" ("valutazione", "difficoltà", "testo_recensione", "escape_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["valutazione", 3], ["difficoltà", 5], ["testo_recensione", "Stanza lunga e complessa, enigmi interessanti"], ["escape_id", 1], ["user_id", 4], ["created_at", "2021-06-13 22:56:31.963562"], ["updated_at", "2021-06-13 22:56:31.963562"]]
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/escapes/1
+Completed 302 Found in 16ms (ActiveRecord: 2.2ms | Allocations: 4525)
+
+
+Started GET "/escapes/1" for 127.0.0.1 at 2021-06-14 00:56:31 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.2ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 8.7ms | Allocations: 4484)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 8132)
+Completed 200 OK in 23ms (Views: 14.9ms | ActiveRecord: 0.9ms | Allocations: 10839)
+
+
+Started GET "/escapes" for 127.0.0.1 at 2021-06-14 00:56:57 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 32.8ms | Allocations: 12393)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 40.3ms | Allocations: 16073)
+Completed 200 OK in 46ms (Views: 39.5ms | ActiveRecord: 1.8ms | Allocations: 18085)
+
+
+Started GET "/escapes/2" for 127.0.0.1 at 2021-06-14 00:57:32 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.2ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 14.1ms | Allocations: 3580)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | Allocations: 7320)
+Completed 200 OK in 32ms (Views: 22.2ms | ActiveRecord: 1.2ms | Allocations: 10538)
+
+
+Started POST "/escapes/2/reviews" for 127.0.0.1 at 2021-06-14 00:57:41 +0200
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"testo_recensione"=>"Non me la ricordo,il che non è positivo", "valutazione"=>"2", "difficoltà"=>"3"}, "commit"=>"Pubblica recensione", "escape_id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mReview Create (1.1ms)[0m  [1m[32mINSERT INTO "reviews" ("valutazione", "difficoltà", "testo_recensione", "escape_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["valutazione", 2], ["difficoltà", 3], ["testo_recensione", "Non me la ricordo,il che non è positivo"], ["escape_id", 2], ["user_id", 4], ["created_at", "2021-06-13 22:57:41.576624"], ["updated_at", "2021-06-13 22:57:41.576624"]]
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/escapes/2
+Completed 302 Found in 17ms (ActiveRecord: 3.3ms | Allocations: 4525)
+
+
+Started GET "/escapes/2" for 127.0.0.1 at 2021-06-14 00:57:41 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 9.9ms | Allocations: 4484)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 8132)
+Completed 200 OK in 24ms (Views: 16.1ms | ActiveRecord: 0.8ms | Allocations: 10839)
+
+
+Started GET "/escapes" for 127.0.0.1 at 2021-06-14 00:57:44 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 49.1ms | Allocations: 12438)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 77.2ms | Allocations: 16542)
+Completed 200 OK in 82ms (Views: 75.9ms | ActiveRecord: 2.6ms | Allocations: 18133)
+
+
+Started GET "/escapes/3" for 127.0.0.1 at 2021-06-14 00:57:50 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 13.0ms | Allocations: 3600)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 7335)
+Completed 200 OK in 32ms (Views: 21.8ms | ActiveRecord: 1.0ms | Allocations: 10539)
+
+
+Started POST "/escapes/3/reviews" for 127.0.0.1 at 2021-06-14 00:58:17 +0200
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"testo_recensione"=>"Stanza semplice ma efficace, divertente", "valutazione"=>"4", "difficoltà"=>"3"}, "commit"=>"Pubblica recensione", "escape_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mReview Create (0.7ms)[0m  [1m[32mINSERT INTO "reviews" ("valutazione", "difficoltà", "testo_recensione", "escape_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["valutazione", 4], ["difficoltà", 3], ["testo_recensione", "Stanza semplice ma efficace, divertente"], ["escape_id", 3], ["user_id", 4], ["created_at", "2021-06-13 22:58:17.645205"], ["updated_at", "2021-06-13 22:58:17.645205"]]
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/escapes/3
+Completed 302 Found in 17ms (ActiveRecord: 2.5ms | Allocations: 4525)
+
+
+Started GET "/escapes/3" for 127.0.0.1 at 2021-06-14 00:58:17 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 9.2ms | Allocations: 4484)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 8132)
+Completed 200 OK in 24ms (Views: 16.0ms | ActiveRecord: 0.7ms | Allocations: 10842)
+
+
+Started GET "/escapes" for 127.0.0.1 at 2021-06-14 00:58:19 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.2ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 33.3ms | Allocations: 12474)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 40.2ms | Allocations: 16537)
+Completed 200 OK in 45ms (Views: 39.1ms | ActiveRecord: 1.9ms | Allocations: 18132)
+
+
+Started GET "/escapes/4" for 127.0.0.1 at 2021-06-14 00:59:06 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 12.8ms | Allocations: 3580)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 7329)
+Completed 200 OK in 31ms (Views: 22.9ms | ActiveRecord: 1.0ms | Allocations: 10532)
+
+
+Started POST "/escapes/4/reviews" for 127.0.0.1 at 2021-06-14 00:59:19 +0200
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"testo_recensione"=>"Stanza molto all'avanguardia anche se un po' dispersiva", "valutazione"=>"3", "difficoltà"=>"5"}, "commit"=>"Pubblica recensione", "escape_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mReview Create (1.2ms)[0m  [1m[32mINSERT INTO "reviews" ("valutazione", "difficoltà", "testo_recensione", "escape_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["valutazione", 3], ["difficoltà", 5], ["testo_recensione", "Stanza molto all'avanguardia anche se un po' dispersiva"], ["escape_id", 4], ["user_id", 4], ["created_at", "2021-06-13 22:59:19.508221"], ["updated_at", "2021-06-13 22:59:19.508221"]]
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/escapes/4
+Completed 302 Found in 17ms (ActiveRecord: 2.7ms | Allocations: 4527)
+
+
+Started GET "/escapes/4" for 127.0.0.1 at 2021-06-14 00:59:19 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 9.2ms | Allocations: 4484)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 8127)
+Completed 200 OK in 24ms (Views: 16.3ms | ActiveRecord: 0.8ms | Allocations: 10834)
+
+
+Started GET "/escapes" for 127.0.0.1 at 2021-06-14 00:59:24 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 31.6ms | Allocations: 12466)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.3ms | Allocations: 16149)
+Completed 200 OK in 43ms (Views: 37.5ms | ActiveRecord: 2.0ms | Allocations: 18155)
+
+
+Started GET "/escapes/5" for 127.0.0.1 at 2021-06-14 00:59:33 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 12.8ms | Allocations: 3580)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 7304)
+Completed 200 OK in 30ms (Views: 20.4ms | ActiveRecord: 1.1ms | Allocations: 10516)
+
+
+Started POST "/escapes/5/reviews" for 127.0.0.1 at 2021-06-14 01:00:02 +0200
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"testo_recensione"=>"Bella stanza, ma forse troppo difficile, da fare solo se si ha esperienza", "valutazione"=>"4", "difficoltà"=>"5"}, "commit"=>"Pubblica recensione", "escape_id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mReview Create (0.9ms)[0m  [1m[32mINSERT INTO "reviews" ("valutazione", "difficoltà", "testo_recensione", "escape_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["valutazione", 4], ["difficoltà", 5], ["testo_recensione", "Bella stanza, ma forse troppo difficile, da fare solo se si ha esperienza"], ["escape_id", 5], ["user_id", 4], ["created_at", "2021-06-13 23:00:02.260672"], ["updated_at", "2021-06-13 23:00:02.260672"]]
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/escapes/5
+Completed 302 Found in 16ms (ActiveRecord: 2.9ms | Allocations: 4525)
+
+
+Started GET "/escapes/5" for 127.0.0.1 at 2021-06-14 01:00:02 +0200
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.2ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 14.5ms | Allocations: 4487)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 8135)
+Completed 200 OK in 46ms (Views: 21.7ms | ActiveRecord: 1.1ms | Allocations: 10842)
+
+
+Started GET "/escapes" for 127.0.0.1 at 2021-06-14 01:00:04 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 33.0ms | Allocations: 12479)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 39.4ms | Allocations: 16574)
+Completed 200 OK in 44ms (Views: 38.1ms | ActiveRecord: 2.1ms | Allocations: 18166)
+
+
+Started GET "/escapes" for 127.0.0.1 at 2021-06-14 01:00:22 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.2ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 32.0ms | Allocations: 12331)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 39.2ms | Allocations: 15992)
+Completed 200 OK in 44ms (Views: 38.8ms | ActiveRecord: 1.9ms | Allocations: 17546)
+
+
+Started GET "/escapes" for 127.0.0.1 at 2021-06-14 01:00:30 +0200
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.1ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 28.8ms | Allocations: 12331)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.1ms | Allocations: 15981)
+Completed 200 OK in 37ms (Views: 32.1ms | ActiveRecord: 1.6ms | Allocations: 17535)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2021-06-14 01:01:03 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms | Allocations: 1828)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-14 01:01:03 +0200
+Processing by EscapesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 237)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-06-14 01:01:03 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.5ms | Allocations: 224)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1132)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 4833)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 5518)
+
+

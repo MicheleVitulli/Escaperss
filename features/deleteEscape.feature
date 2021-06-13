@@ -1,6 +1,6 @@
-Feature: Admin can add a escape room
+Feature: Admin can delete an escape room
 @javascript
-Scenario: Add a escape
+Scenario: Delete an escape
     Given I am Admin
     Given I am on Escaperss home page
     Then I should see "Il manicomio"
