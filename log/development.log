@@ -18299,3 +18299,232 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 5518)
 
 
+  [1m[35m (14.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/models/user.rb:10:in `<class:User>'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/models/user.rb:10:in `<class:User>'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/models/user.rb:10:in `<class:User>'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/models/user.rb:10:in `<class:User>'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/models/user.rb:10:in `<class:User>'
+Started GET "/" for 127.0.0.1 at 2021-11-04 12:26:28 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EscapesController#index as HTML
+Completed 401 Unauthorized in 12ms (ActiveRecord: 0.0ms | Allocations: 2344)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-11-04 12:26:28 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 2.8ms | Allocations: 830)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 4007)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/michele/Documents/GitHub/Escaperss/public/packs
+[Webpacker] Browserslist: caniuse-lite is outdated. Please run:
+npx browserslist@latest --update-db
+
+Why you should do it regularly:
+https://github.com/browserslist/browserslist#browsers-data-updating
+
+[Webpacker] Hash: e332c6419728fac579d5
+Version: webpack 4.46.0
+Time: 1053ms
+Built at: 11/04/2021 12:26:31 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-f826770d917d8a37c1d8.js    125 KiB  application  [emitted] [immutable]  application
+js/application-f826770d917d8a37c1d8.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-f826770d917d8a37c1d8.js js/application-f826770d917d8a37c1d8.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2984.9ms | Allocations: 35567)
+Completed 200 OK in 3018ms (Views: 2990.2ms | ActiveRecord: 0.4ms | Allocations: 43842)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2021-11-04 12:26:45 +0100
+Started GET "/users/auth/google_oauth2/callback?state=6f7a2da9bb5f43c87970b4a5dfdcc5563c7f575bc668d65b&code=4%2F0AX4XfWhVVpRLWpcNBx4L2gFt-jWTSFrq7rVxQzRit4eGRXypNuXNMn9jOpRZytAc-u_fpA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=consent" for 127.0.0.1 at 2021-11-04 12:26:49 +0100
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"6f7a2da9bb5f43c87970b4a5dfdcc5563c7f575bc668d65b", "code"=>"4/0AX4XfWhVVpRLWpcNBx4L2gFt-jWTSFrq7rVxQzRit4eGRXypNuXNMn9jOpRZytAc-u_fpA", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "prompt"=>"consent"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "vitulli430@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16:in `from_omniauth'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.7ms | Allocations: 2291)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-04 12:26:49 +0100
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.5ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 104.8ms | Allocations: 26732)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 114.3ms | Allocations: 29961)
+Completed 200 OK in 127ms (Views: 112.7ms | ActiveRecord: 5.9ms | Allocations: 33396)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2021-11-04 12:27:42 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 25ms (ActiveRecord: 0.2ms | Allocations: 5910)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-04 12:27:42 +0100
+Processing by EscapesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 288)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-11-04 12:27:42 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.6ms | Allocations: 229)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1197)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 4403)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 5151)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/models/user.rb:10:in `<class:User>'
+Started GET "/" for 127.0.0.1 at 2021-11-04 12:29:02 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EscapesController#index as HTML
+Completed 401 Unauthorized in 11ms (ActiveRecord: 0.0ms | Allocations: 2344)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-11-04 12:29:02 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 1.9ms | Allocations: 830)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 16.7ms | Allocations: 4007)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.0ms | Allocations: 10836)
+Completed 200 OK in 60ms (Views: 41.2ms | ActiveRecord: 0.5ms | Allocations: 19111)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2021-11-04 12:29:05 +0100
+Started GET "/users/auth/google_oauth2/callback?state=679a6e9eccde2ca4c00755581ce34a744268bd2bdfe57cfd&code=4%2F0AX4XfWj5K_GUUXqXweS91sI2NtqDEMDoZrK7wIli-ZX2qrYesONc3t1jR8PJVrj-LlyxHQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none" for 127.0.0.1 at 2021-11-04 12:29:07 +0100
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"679a6e9eccde2ca4c00755581ce34a744268bd2bdfe57cfd", "code"=>"4/0AX4XfWj5K_GUUXqXweS91sI2NtqDEMDoZrK7wIli-ZX2qrYesONc3t1jR8PJVrj-LlyxHQ", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "prompt"=>"none"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "vitulli430@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16:in `from_omniauth'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms | Allocations: 2271)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-04 12:29:07 +0100
+Processing by EscapesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/index.html.erb within layouts/application
+  [1m[36mEscape Load (0.4ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes"[0m
+  ↳ app/views/escapes/index.html.erb:29
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 2]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 3]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 4]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:6:in `mediaVoti'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:9:in `mediaVoti'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 5]]
+  ↳ app/models/escape.rb:18:in `mediaDiff'
+  Rendered escapes/index.html.erb within layouts/application (Duration: 81.4ms | Allocations: 26420)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 90.6ms | Allocations: 29652)
+Completed 200 OK in 130ms (Views: 89.0ms | ActiveRecord: 4.4ms | Allocations: 33085)
+
+
+Started GET "/escapes/1" for 127.0.0.1 at 2021-11-04 12:29:17 +0100
+Processing by EscapesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEscape Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:13:in `show'
+  [1m[36mEscape Load (0.3ms)[0m  [1m[34mSELECT "escapes".* FROM "escapes" WHERE "escapes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/escapes_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering escapes/show.html.erb within layouts/application
+  [1m[36mReview Load (8.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."escape_id" = ?[0m  [["escape_id", 1]]
+  ↳ app/views/escapes/show.html.erb:18
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/escapes/show.html.erb:20
+  Rendered escapes/show.html.erb within layouts/application (Duration: 46.3ms | Allocations: 7118)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 54.0ms | Allocations: 10232)
+Completed 200 OK in 72ms (Views: 46.2ms | ActiveRecord: 9.5ms | Allocations: 13495)
+
+
