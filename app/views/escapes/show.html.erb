@@ -16,8 +16,9 @@
       <h1>Recensioni</h1>
       <div class="row">
         <% @escape.reviews.each do |rec| %>
-          <div class="col-md-4">
-            <h4>Escaper: <%=link_to rec.user.email, user_reviews_path(rec.user)%>
+          <div class="col-md-6 col-lg-4">
+            <h4>Escaper:</h4>
+            <h4><%=link_to rec.user.email, user_reviews_path(rec.user)%>
             </h4>
             <p>
               <%= rec.testo_recensione %>
